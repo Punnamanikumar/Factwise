@@ -1,0 +1,118 @@
+body {
+  zoom: 100%;
+  overflow-x: hidden;
+}
+.box {
+  width: 45%;
+  /* margin-left: -40%; */
+  border: 1px solid rgb(194, 189, 189);
+  box-sizing: content-box;
+  border-radius: 10px;
+  box-shadow: 3px 3px 6px grey;
+  margin-bottom: 2%;
+}
+.one {
+  margin-bottom: 2%;
+  display: flex;
+  margin-left: 2%;
+  justify-content: space-between;
+}
+img {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 1px solid rgb(189, 184, 184);
+  margin-top: 10px;
+}
+.flex {
+  display: flex;
+  justify-content: space-around;
+}
+.two {
+  margin-left: -10.5%;
+}
+.name {
+  top: 61px;
+  margin: 2% 50% 0% 0%;
+  font-weight: bold;
+  font-size: 28px;
+}
+.icon1 {
+  margin-right: 3%;
+  margin-top: 2%;
+  cursor: pointer;
+}
+.hidecontent {
+  display: none;
+}
+.age {
+  margin-left: -10px;
+}
+.ainput {
+  margin-left: -15px;
+}
+.ginput {
+  margin-left: -55px;
+}
+.three {
+  text-align: justify;
+  padding: 10px;
+  margin-left: 14px;
+}
+.four {
+  margin-right: -90%;
+  zoom: 120%;
+  padding-bottom: 5px;
+}
+.five {
+  margin-right: -90%;
+  zoom: 120%;
+  padding-bottom: 5px;
+}
+.edit {
+  margin-left: 15px;
+  color: rgb(16, 179, 51);
+  cursor: pointer;
+}
+.delete {
+  color: red;
+  cursor: pointer;
+}
+.cancel {
+  color: red;
+}
+.save {
+  margin-left: 15px;
+  color: rgb(16, 179, 51);
+  cursor: pointer;
+}
+.search {
+  margin-top: 1%;
+}
+input {
+  border-radius: 10px;
+  height: 35px;
+  width: 200px;
+  padding-left: 10px;
+  padding-right: 33px;
+  padding-bottom: 2px;
+}
+.fa-search {
+  margin-left: -30px;
+}
+.editDEsz {
+  width: 100%;
+  height: 78px;
+}
+.hideedit {
+  display: none;
+}
+.showedit {
+  display: block;
+}
+
+@media screen and (min-width: 360px) and (max-width: 771px) {
+  body {
+    zoom: 50%;
+  }
+}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Celebrities from "./celebrities.json";
 import "./Background.css";
 import { EditTextarea } from "react-edit-text";

@@ -29,8 +29,8 @@ const AllComponents = () => {
 
   useEffect(() => {
     deleteButton();
-    console.log(newid);
-  }, [newid]);
+    // console.log(newid);
+  }, [newid, deleteButton]);
 
   return (
     <div>

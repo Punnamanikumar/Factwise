@@ -9,15 +9,6 @@ const AllComponents = () => {
   const [newid, setNewId] = useState("");
   const [selected, setSelected] = useState(null);
   const [editSelected, setEditSelected] = useState(null);
-  const [toggleEdit, setToggleEdit] = useState(true);
-  const [year, setYear] = useState("");
-
-  const calculateage = () => {
-    let date = new Date();
-    // date.getFullYear();
-    // console.log(date.getFullYear());
-    setYear(date.getFullYear());
-  };
 
   const hideButton = (i) => {
     if (editSelected === i) {
@@ -30,13 +21,16 @@ const AllComponents = () => {
       return setSelected(null);
     }
     setSelected(i);
-    setToggleEdit(true);
-    calculateage();
   };
   const deleteButton = () => {
     var newFilterData = newData.filter((item) => item.id !== Number(newid));
     setNewData(newFilterData);
   };
+
+  useEffect(() => {
+    // console.log(newid);
+  }, [newid]);
+
   return (
     <div>
       <center>
@@ -86,7 +80,7 @@ const AllComponents = () => {
                       <div className="country">Country</div>
                     </div>
                     <div className="inpts flex">
-                      <div className="ainput">{year - val.dob.slice(0, 4)}</div>
+                      <div className="ainput">{val.dob}</div>
                       <div className="ginput"> {val.gender}</div>
                       <div className="cinput">{val.country}</div>
                     </div>
@@ -94,6 +88,7 @@ const AllComponents = () => {
                   <div className="three" name="description">
                     <div className="desc">Description :</div>
                     <div className="descinput">
+                      {/* {val.description} */}
                       <EditTextarea
                         className="editDEsz"
                         value={val.description}
@@ -101,41 +96,32 @@ const AllComponents = () => {
                     </div>
                   </div>
                   <div>
-                    {toggleEdit ? (
-                      <div className="four">
-                        <span onClick={deleteButton}>
-                          <span
-                            className="delete"
-                            id={val.id}
-                            onClick={() => setNewId(`${val.id}`)}
-                          >
-                            <i className="far fa-trash-alt" />
-                          </span>
-                        </span>
+                    <div className="four">
+                      <span onClick={deleteButton}>
                         <span
-                          className="edit"
-                          onClick={() => setToggleEdit(false)}
+                          className="delete"
+                          id={val.id}
+                          onClick={() => setNewId(`${val.id}`)}
                         >
-                          <i className="far fa-edit"></i>
+                          <i className="far fa-trash-alt" />
                         </span>
-                        {/* <EditText showEditButton value={val.dob} /> */}
-                        {/* <EditTextarea /> */}
-                      </div>
-                    ) : (
-                      <div>
-                        <div
-                          className="five"
-                          onClick={() => setToggleEdit(true)}
-                        >
-                          <span className="cancel">
-                            <i className="fa-regular fa-circle-xmark"></i>
-                          </span>
-                          <span className="save">
-                            <i className="fa-regular fa-circle-check" />
-                          </span>
-                        </div>
-                      </div>
-                    )}
+                      </span>
+                      <span className="edit" onClick={() => hideButton(i)}>
+                        <i className="far fa-edit"></i>
+                      </span>
+                      {/* <EditText showEditButton value={val.dob} /> */}
+                      {/* <EditTextarea /> */}
+                    </div>
+                  </div>
+                </div>
+                <div className="hideedit">
+                  <div className="five">
+                    <span className="cancel">
+                      <i className="fa-regular fa-circle-xmark"></i>
+                    </span>
+                    <span className="save">
+                      <i className="fa-regular fa-circle-check" />
+                    </span>
                   </div>
                 </div>
               </div>

@@ -24,6 +24,18 @@ img {
   border: 1px solid rgb(189, 184, 184);
   margin-top: 10px;
 }
+/* .ainput {
+  left: -3%;
+  position: relative;
+}
+.inpts {
+  margin-left: 8%;
+  /* text-align: center; */
+/* } */
+.ginput {
+  position: relative;
+  left: 40px;
+}
 .flex {
   display: flex;
   justify-content: space-around;
@@ -80,6 +92,7 @@ img {
 }
 .cancel {
   color: red;
+  cursor: pointer;
 }
 .save {
   margin-left: 15px;
